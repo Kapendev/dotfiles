@@ -1,4 +1,4 @@
-## D Programming Language
+## C Programming Language
 
 ## This theme was created with:
 ## * Terminal:         MATE Terminal
@@ -14,16 +14,12 @@ comment "//"
 color ,green "[[:space:]]+$"
 
 # Keywords
-color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|interface|int|uint|long|ulong|float|double|real|char|wchar|dchar|struct|union|class|function|delegate|template|immutable)\>"
-color brightblue "\<(for|if|while|do|else|case|default|switch|foreach|foreach_reverse|with)\>"
-color brightblue "\<(try|throw|catch|scope|finally)\>"
-color brightblue "\<(align|asm|assert|auto|const|export|null|shared|typeid|typeof|final)\>"
+color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|int|uint|long|ulong|float|double|char|wchar|dchar|struct|union|class|template)\>"
+color brightblue "\<(for|if|while|do|else|case|default|switch)\>"
+color brightblue "\<(auto|const|extern|null)\>"
 color brightblue "\<(goto|continue|break|return)\>"
-color brightblue "\<(import|pragma|version|mixin|module|macro)\>"
-color brightblue "\<(abstract|override|package|private|protected|public|super|static|this|new)\>"
-color brightblue "\<(in|out|inout|ref|nothrow|pure|lazy)\>"
-color brightblue "@[a-zA-Z]+[0-9]{0,2}"
-color brightblue "#[a-zA-Z]+[0-9]{0,2}"
+color brightblue "\<(private|protected|public|static|this|new)\>"
+color brightblue "#[a-zA-Z0-9]+"
 color brightblue "\<(unsigned|signed)\>"
 color brightblue "deprecated"
 
