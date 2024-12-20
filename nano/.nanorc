@@ -1,0 +1,22 @@
+set noconvert
+set multibuffer
+set casesensitive
+
+set autoindent
+set tabstospaces
+set tabsize 4
+
+set nohelp
+set emptyline
+set linenumbers
+set titlecolor normal
+
+bind M-d "{copy}{paste}{up}" main
+bind M-c "{cut}" main
+bind M-a "{cut}{up}{paste}{up}" main
+bind M-s "{cut}{down}{paste}{up}" main
+
+include "~/dotfiles/nano/themes/c.nanorc"
+include "~/dotfiles/nano/themes/d.nanorc"
+
+# set mouse
