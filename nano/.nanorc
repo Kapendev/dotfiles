@@ -11,10 +11,18 @@ set emptyline
 set linenumbers
 set titlecolor normal
 
-bind M-d "{copy}{paste}{up}" main
-bind M-c "{cut}" main
-bind M-a "{cut}{up}{paste}{up}" main
-bind M-s "{cut}{down}{paste}{up}" main
+bind ^q "{exit}" main
+bind ^x "{cut}" main
+bind ^c "{copy}" main
+bind ^v "{paste}" main
+bind ^z "{undo}" main
+bind ^y "{redo}" main
+bind ^e "{execute}" main
+bind ^d "{copy}{paste}{up}" main
+bind ^h "{cut}{up}{paste}{up}" main
+bind ^l "{cut}{down}{paste}{up}" main
+bind ^Space "{complete}" main
+bind M-/ "{comment}" main
 
 include "~/dotfiles/nano/themes/c.nanorc"
 include "~/dotfiles/nano/themes/d.nanorc"
