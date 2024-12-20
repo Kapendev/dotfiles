@@ -18,7 +18,7 @@ color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|int|uint|long|u
 color brightblue "\<(for|if|while|do|else|case|default|switch)\>"
 color brightblue "\<(auto|const|extern|null)\>"
 color brightblue "\<(goto|continue|break|return)\>"
-color brightblue "\<(private|protected|public|static|this|new)\>"
+color brightblue "\<(typedef|private|protected|public|static|this|new)\>"
 color brightblue "#[a-zA-Z0-9]+"
 color brightblue "\<(unsigned|signed)\>"
 color brightblue "deprecated"
