@@ -18,10 +18,11 @@ bind ^v "{paste}" main
 bind ^z "{undo}" main
 bind ^y "{redo}" main
 bind ^e "{execute}" main
-bind ^d "{copy}{paste}{up}" main
-bind ^h "{cut}{up}{paste}{up}" main
-bind ^l "{cut}{down}{paste}{up}" main
 bind ^Space "{complete}" main
+
+bind ^d "{copy}{paste}{up}" main
+bind M-w "{cut}{up}{paste}{up}" main
+bind M-s "{cut}{down}{paste}{up}" main
 bind M-/ "{comment}" main
 
 include "~/.nanotc/c.nanorc"
