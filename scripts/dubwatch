@@ -1,0 +1,13 @@
+#!/bin/env sh
+
+# A script that automatically runs DUB projects when a file changes.
+
+name="dubwatch"
+main_dir="$PWD"
+
+if [ -d "$1" ]; then
+    cd "$1"
+    find -name '*.d' | entr dub run
+else
+    echo "Usage: $name <project>"
+fi

@@ -6,14 +6,14 @@
 # * rc: Run commands
 # * tc: Theme commands
 
-# This will say hello.
-hello_arg="hello"
-# This will download some packages.
-packages_arg="++"
+hello_arg="hello" # This will say hello.
+packages_arg="++" # This will download some packages.
 
 cd "$(dirname "$0")"
+ln -sf "$PWD/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/nano/.nanorc" "$HOME/.nanorc"
 ln -sf "$PWD/nano/.nanotc" "$HOME/.nanotc"
+rm -f "$PWD/nano/.nanotc/.nanotc" # No idea why I get a link inside there.
 
 for arg in "$@"; do
     if [ "$arg" = "$hello_arg" ]; then
