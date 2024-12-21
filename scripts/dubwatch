@@ -3,11 +3,15 @@
 # A script that automatically runs DUB projects when a file changes.
 
 name="dubwatch"
-main_dir="$PWD"
 
-if [ -d "$1" ]; then
+if [ -d "$1" -a -d "$2" ]; then
     cd "$1"
-    find -name '*.d' | entr dub run
+    echo "Watching!"
+    find "$2" -maxdepth 1 -name '*.d' | entr -p dub run
+elif [ -d "$1" ]; then
+    cd "$1"
+    echo "Watching!"
+    find -name '*.d' | entr -p dub run
 else
-    echo "Usage: $name <project>"
+    echo "Usage: $name <project> [subfolder]"
 fi
