@@ -24,7 +24,7 @@ bind ^l "{cut}{down}{paste}{up}" main
 bind ^Space "{complete}" main
 bind M-/ "{comment}" main
 
-include "~/dotfiles/nano/themes/c.nanorc"
-include "~/dotfiles/nano/themes/d.nanorc"
+include "~/.nanotc/c.nanorc"
+include "~/.nanotc/d.nanorc"
 
 # set mouse

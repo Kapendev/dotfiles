@@ -1,12 +1,28 @@
 #!/bin/env sh
 
-# This argument will download some packages.
+# This script just works. It will delete old files, so keep that in mind.
+
+# Some words:
+# * rc: Run commands
+# * tc: Theme commands
+
+# This will say hello.
+hello_arg="hello"
+# This will download some packages.
 packages_arg="++"
 
 cd "$(dirname "$0")"
 ln -sf "$PWD/nano/.nanorc" "$HOME/.nanorc"
+ln -sf "$PWD/nano/.nanotc" "$HOME/.nanotc"
 
 for arg in "$@"; do
+    if [ "$arg" = "$hello_arg" ]; then
+        echo "Hello. How are you?"
+        echo -n "> "
+        read input
+        echo "Great!"
+        continue
+    fi
     if [ "$arg" = "$packages_arg" ]; then
         echo "Installing packages."
         sudo apt install \
@@ -14,7 +30,10 @@ for arg in "$@"; do
             entr \
             dmd ldc \
             wine gimp inkscape
+        continue
     fi
-done;
+    echo "What do you mean by \"$arg\"? This is not funny."
+    break
+done
 
 echo "Done!"
