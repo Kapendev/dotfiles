@@ -21,11 +21,11 @@ bind ^e "{execute}" main
 bind ^Space "{complete}" main
 
 bind ^d "{copy}{paste}{up}" main
-bind M-w "{cut}{up}{paste}{up}" main
-bind M-s "{cut}{down}{paste}{up}" main
+bind M-a "{cut}{up}{paste}{up}" main
+bind M-d "{cut}{down}{paste}{up}" main
 bind M-/ "{comment}" main
 
 include "~/.nanotc/c.nanorc"
 include "~/.nanotc/d.nanorc"
 
-# set mouse
+#set mouse

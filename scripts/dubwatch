@@ -4,14 +4,10 @@
 
 name="dubwatch"
 
-if [ -d "$1" -a -d "$2" ]; then
+if [ -d "$1" ]; then
     cd "$1"
     echo "Watching!"
-    find "$2" -maxdepth 1 -name '*.d' | entr -p dub run
-elif [ -d "$1" ]; then
-    cd "$1"
-    echo "Watching!"
-    find -name '*.d' | entr -p dub run
+    find -name '*.d' | entr -p dub run -- "$2" "$3" "$4" "$5" "$6" "$7"
 else
-    echo "Usage: $name <project> [subfolder]"
+    echo "Usage: $name <project> [args]"
 fi
