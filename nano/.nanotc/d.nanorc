@@ -21,7 +21,7 @@ color brightblue "\<(align|asm|assert|auto|const|alias|extern|export|null|shared
 color brightblue "\<(goto|continue|break|return)\>"
 color brightblue "\<(import|pragma|version|mixin|module|macro)\>"
 color brightblue "\<(abstract|override|package|private|protected|public|super|static|this|new)\>"
-color brightblue "\<(in|out|inout|ref|nothrow|pure|lazy)\>"
+color brightblue "\<(in|out|inout|ref|nothrow|pure|lazy|debug|unittest)\>"
 color brightblue "@[a-zA-Z0-9]+"
 color brightblue "deprecated"
 
