@@ -4,8 +4,12 @@ packages_arg="++"
 
 # Prepare some stuff.
 cd "$(dirname "$0")"
+mkdir -p "$HOME/.local/share/fonts/"
 mkdir -p "$HOME/.local/share/gtksourceview-2.0/styles/"
 mkdir -p "$HOME/.local/share/gtksourceview-3.0/styles/"
+
+# [Fonts]
+cp -f $PWD/assets/fonts/* "$HOME/.local/share/fonts/"
 
 # [Bash]
 ln -sf "$PWD/bash/.bashrc" "$HOME/.bashrc"
