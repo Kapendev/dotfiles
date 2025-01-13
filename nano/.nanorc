@@ -8,8 +8,8 @@ set tabsize 4
 
 set nohelp
 set emptyline
-set linenumbers
 set titlecolor normal
+#set linenumbers
 
 bind ^q "{exit}" main
 bind ^x "{cut}" main
@@ -27,5 +27,3 @@ bind M-/ "{comment}" main
 
 include "~/.nanotc/c.nanorc"
 include "~/.nanotc/d.nanorc"
-
-#set mouse

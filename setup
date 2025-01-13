@@ -1,35 +1,43 @@
 #!/bin/env sh
 
-# This script just works. It will delete old files, so keep that in mind.
+packages_arg="++"
 
-# Some words:
-# * rc: Run commands
-# * tc: Theme commands
-
-hello_arg="hello" # This will say hello.
-packages_arg="++" # This will download some packages.
-
+# Prepare some stuff.
 cd "$(dirname "$0")"
+mkdir -p "$HOME/.local/share/gtksourceview-2.0/styles/"
+mkdir -p "$HOME/.local/share/gtksourceview-3.0/styles/"
+
+# [Bash]
 ln -sf "$PWD/bash/.bashrc" "$HOME/.bashrc"
+
+# [Kitty]
+ln -sf "$PWD/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+
+# [Nano]
 ln -sf "$PWD/nano/.nanorc" "$HOME/.nanorc"
 ln -sf "$PWD/nano/.nanotc" "$HOME/.nanotc"
-rm -f "$PWD/nano/.nanotc/.nanotc" # No idea why I get a link inside there.
+# No idea why I get a link inside there.
+rm -f "$PWD/nano/.nanotc/.nanotc"
+
+# [Pluma]
+# This will not work, but ehh, might work with other GTK apps.
+ln -sf "$PWD/pluma/Kapendev.xml" "$HOME/.local/share/gtksourceview-2.0/styles/Kapendev.xml"
+ln -sf "$PWD/pluma/Kapendev.xml" "$HOME/.local/share/gtksourceview-3.0/styles/Kapendev.xml"
 
 for arg in "$@"; do
-    if [ "$arg" = "$hello_arg" ]; then
-        echo "Hello. How are you?"
-        echo -n "> "
-        read input
-        echo "Great!"
-        continue
-    fi
     if [ "$arg" = "$packages_arg" ]; then
-        echo "Installing packages."
         sudo apt install \
-            build-essential git \
+            build-essential \
+            git \
+            subversion \
             entr \
-            dmd ldc \
-            wine gimp inkscape
+            dmd \
+            ldc \
+            kitty \
+            pluma \
+            wine \
+            gimp \
+            inkscape
         continue
     fi
     echo "What do you mean by \"$arg\"? This is not funny."
