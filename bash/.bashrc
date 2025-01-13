@@ -30,9 +30,9 @@ if ! shopt -oq posix; then
 fi
 
 # Kapendev main stuff.
-export  PS1="> \w\n| "
+export PS1="> \w\n| "
 export PATH="$PATH:$HOME/dotfiles/scripts"
 # Kapendev fun stuff.
-alias  code="flatpak run com.vscodium.codium"
+alias code="flatpak run com.vscodium.codium"
 alias winej="LANG=ja_JP.UTF-8 wine"
-alias   7zj="LANG=ja_JP.UTF-8 wine $HOME/.wine/drive_c/Program\ Files/7-Zip/7z.exe"
+alias 7zj="LANG=ja_JP.UTF-8 wine $HOME/.wine/drive_c/Program\ Files/7-Zip/7z.exe"
