@@ -1,0 +1,14 @@
+## Rin Scripting Language
+
+syntax "Rin" "\.rin$"
+magic "^(Rin) (source|program)"
+comment "#"
+
+# Operators
+color brightblue "\<(ADD|SUB|MUL|DIV|MOD|AND|OR|LESS|GREATER|EQUAL|NOT|POP|CLEAR|SWAP|COPY|IF|ELSE|THEN|CAT|WORD|NUM|END|ECHO|LEAK|LOOK|HERE|GET|SET|INIT|DROP|INC|DEC|TOG|MENU|SKIP|JUMP|CALL)\>"
+# Lines
+color cyan "^[ \t]*\*" "^[ \t]*\|" "^[ \t]*\." "^[ \t]*\+" "^[ \t]*\$"
+# Comments
+color green "#.*"
+# Trailing Whitespace
+color ,green "[[:space:]]+$"

@@ -1,17 +1,8 @@
 ## D Programming Language
 
-## This theme was created with:
-## * Terminal:         MATE Terminal
-## * Palette:          Solarized
-## * Text color:       #B8AD91
-## * Background color: #0D0D0D
-
 syntax "D" "\.d$"
 magic "^(D) (source|program)"
 comment "//"
-
-# Trailing Whitespace
-color ,green "[[:space:]]+$"
 
 # Keywords
 color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|interface|int|uint|long|ulong|float|double|real|char|wchar|dchar|struct|union|class|function|delegate|template|immutable)\>"
@@ -24,23 +15,22 @@ color brightblue "\<(abstract|override|package|private|protected|public|super|st
 color brightblue "\<(in|out|inout|ref|nothrow|pure|lazy|debug|unittest)\>"
 color brightblue "@[a-zA-Z0-9]+"
 color brightblue "deprecated"
-
+# Escape Sequences
+color brightblue "\\(\#|(0-+))?('|\"|\?|\\|0|a|b|f|n|r|t|v|x|u|U)"
 # Booleans
 color cyan "\<(true|false)\>"
 # Numbers
 color cyan "\<[0-9]+\.[0-9]+(f|F)*\>" "\<[0-9]+(L|u|U|Lu|LU|uL|UL)*\>" "\<0[0-7]*\>" "\<0x[0-9a-fA-F][0-9a-fA-F]*\>"
 # Strings
-# You will in general want your comments and strings to come last,
-# because syntax highlighting rules will be applied in the order they are read in.
 color cyan ""(\\.|[^"])*"" "`(\\.|[^"])*`"
 # Characters
 color cyan "'([^'\]|(\\["'abfnrtv\\]))'"
-# Escape Sequences
-color brightblue "\\(\#|(0-+))?('|\"|\?|\\|0|a|b|f|n|r|t|v|x|u|U)"
 # Comments
 color green "//.*"
 color green start="/\*" end="\*/"
 color green start="/\+" end="\+/"
+# Trailing Whitespace
+color ,green "[[:space:]]+$"
 
 # Operators
 # color brightblue "[.:;,+*|=!\%]" "<" ">" "/" "-" "&" "~" "\?"

@@ -1,17 +1,8 @@
 ## C Programming Language
 
-## This theme was created with:
-## * Terminal:         MATE Terminal
-## * Palette:          Solarized
-## * Text color:       #B8AD91
-## * Background color: #0D0D0D
-
 syntax "C" "\.(c(c|pp|xx)?|C)$" "\.(h(h|pp|xx)?|H)$" "\.ii?$" "\.(def)$" "\.ino$"
 magic "^(C|C\+\+) (source|program)"
 comment "//"
-
-# Trailing Whitespace
-color ,green "[[:space:]]+$"
 
 # Keywords
 color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|int|uint|long|ulong|float|double|char|wchar|dchar|struct|union|class|template)\>"
@@ -22,23 +13,22 @@ color brightblue "\<(typedef|private|protected|public|static|this|new)\>"
 color brightblue "#[a-zA-Z0-9]+"
 color brightblue "\<(unsigned|signed)\>"
 color brightblue "deprecated"
-
+# Escape Sequences
+color brightblue "\\(\#|(0-+))?('|\"|\?|\\|0|a|b|f|n|r|t|v|x|u|U)"
 # Booleans
 color cyan "\<(true|false)\>"
 # Numbers
 color cyan "\<[0-9]+\.[0-9]+(f|F)*\>" "\<[0-9]+(L|u|U|Lu|LU|uL|UL)*\>" "\<0[0-7]*\>" "\<0x[0-9a-fA-F][0-9a-fA-F]*\>"
 # Strings
-# You will in general want your comments and strings to come last,
-# because syntax highlighting rules will be applied in the order they are read in.
 color cyan ""(\\.|[^"])*"" "`(\\.|[^"])*`"
 # Characters
 color cyan "'([^'\]|(\\["'abfnrtv\\]))'"
-# Escape Sequences
-color brightblue "\\(\#|(0-+))?('|\"|\?|\\|0|a|b|f|n|r|t|v|x|u|U)"
 # Comments
 color green "//.*"
 color green start="/\*" end="\*/"
 color green start="/\+" end="\+/"
+# Trailing Whitespace
+color ,green "[[:space:]]+$"
 
 # Operators
 # color brightblue "[.:;,+*|=!\%]" "<" ">" "/" "-" "&" "~" "\?"
