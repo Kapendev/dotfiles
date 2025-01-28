@@ -1,0 +1,5 @@
+#!/bin/env sh
+
+# A script that executes a single Rin expression and prints the last value.
+
+rin -execute "$@" "ECHO"

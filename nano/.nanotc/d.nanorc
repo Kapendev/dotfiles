@@ -5,7 +5,7 @@ magic "^(D) (source|program)"
 comment "//"
 
 # Keywords
-color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|interface|int|uint|long|ulong|float|double|real|char|wchar|dchar|size_t|ptrdiff_t|string|struct|union|class|function|delegate|template|immutable)\>"
+color brightblue "\<(cast|void|bool|byte|ubyte|enum|short|ushort|interface|int|uint|long|ulong|float|double|real|char|wchar|dchar|size_t|ptrdiff_t|struct|union|class|function|delegate|template|immutable)\>"
 color brightblue "\<(for|if|while|do|else|case|default|switch|foreach|foreach_reverse|with)\>"
 color brightblue "\<(try|throw|catch|scope|finally)\>"
 color brightblue "\<(align|asm|assert|auto|const|alias|extern|export|null|shared|typeid|typeof|final)\>"
