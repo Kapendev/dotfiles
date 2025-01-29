@@ -30,12 +30,16 @@ ln -sf "$PWD/pluma/Kapendev.xml" "$HOME/.local/share/gtksourceview-3.0/styles/Ka
 
 for arg in "$@"; do
     if [ "$arg" = "$packages_arg" ]; then
+        sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+        sudo apt update
+
         sudo apt install \
             build-essential \
             git \
             subversion \
             valgrind \
             entr \
+            fastfetch \
             dmd \
             ldc \
             kitty \
