@@ -26,6 +26,5 @@ bind M-d "{cut}{down}{paste}{up}" main
 bind M-/ "{comment}" main
 
 include "~/.nanotc/c.nanorc"
-include "~/.nanotc/c3.nanorc"
 include "~/.nanotc/d.nanorc"
 include "~/.nanotc/rin.nanorc"
