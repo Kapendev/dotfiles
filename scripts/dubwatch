@@ -1,6 +1,6 @@
 #!/bin/env sh
 
-# A script that automatically runs DUB projects when a file changes.
+## A script that automatically runs DUB projects when a file changes.
 
 name="dubwatch"
 

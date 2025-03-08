@@ -1,0 +1,13 @@
+#!/bin/env sh
+
+## A script that makes nano work with `grep -rn`.
+
+[ -z "$1" ] && echo "Usage: nanop main.c:69" && exit 1
+path="$(echo "$1" | cut -d':' -f1)"
+line="$(echo "$1" | cut -d':' -f2)"
+if [ "$path" = "$1" ]; then
+    nano "$path"
+else
+    expr "$line" + 1 || exit 1
+    nano +$line "$path"
+fi
