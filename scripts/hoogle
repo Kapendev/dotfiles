@@ -1,0 +1,12 @@
+#!/bin/env sh
+
+## A script that prints a list of functions in a file.
+## Only supports C-like languages.
+
+# I was too lazy to think how to deal with header stuff, so hoogle it is.
+
+[ -z "$1" ] && echo "Usage: hoogle main.h" && exit 1
+path="$1"
+grep -nE '[a-zA-Z_][a-zA-Z0-9_]*[ \t]*\(.*\)[ \t]*;' "$path" \
+    | grep -vE '(alias|enum|version|static|final|if|for|foreach|while|do|switch)[ \t]*\(' \
+    | awk -F: -v path="$path" '{sub(/\s*;.*/, "", $2); print path ":" $1 ":" $2}'
