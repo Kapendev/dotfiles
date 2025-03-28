@@ -30,7 +30,7 @@ if ! shopt -oq posix; then
 fi
 
 # Kapendev main stuff.
-export PS1="> \w\n| "
+export PS1='[$(pwd | rev | cut -d'/' -f1-3 | rev)]\n$ '
 export PATH="$PATH:$HOME/dotfiles/scripts"
 # Kapendev fun stuff.
 alias code="flatpak run com.vscodium.codium"

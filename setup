@@ -32,7 +32,6 @@ for arg in "$@"; do
     if [ "$arg" = "$packages_arg" ]; then
         sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
         sudo apt update
-
         sudo apt install \
             build-essential \
             git \
@@ -46,7 +45,10 @@ for arg in "$@"; do
             pluma \
             wine \
             gimp \
-            inkscape
+            inkscape \
+            ascii \
+            cloc \
+            dos2unix
         continue
     fi
     echo "What do you mean by \"$arg\"? This is not funny."
