@@ -11,12 +11,12 @@ enum mainFile = "./source/app.d";
 int build() {
     return cmd(
         "dmd",
-        "-betterC",
         "-i",
         "-L-rpath=$ORIGIN",
         "-L-lraylib",
         "-L-L.",
         "-of" ~ output,
+        "-Isource",
         "-I" ~ jokaI,
         "-I" ~ parinI,
         "-J" ~ parinJ,
