@@ -2,47 +2,117 @@
 
 // [Noby Script]
 
-enum output   = "./game";
-enum jokaI    = "../joka/source";
-enum parinI   = "../parin/source";
-enum parinJ   = parinI ~ "/../assets";
-enum mainFile = "./source/app.d";
+// It's another build system thing :)
+// Made for fun.
 
-int build() {
-    return cmd(
-        "dmd",
-        "-i",
-        "-L-rpath=$ORIGIN",
-        "-L-lraylib",
-        "-L-L.",
-        "-of" ~ output,
-        "-Isource",
-        "-I" ~ jokaI,
-        "-I" ~ parinI,
-        "-J" ~ parinJ,
-        mainFile,
-    );
-}
+enum usageInfo = `
+Usage:
+ closed <mode> <source> [arguments...]
+`[1 .. $ - 1];
 
-int run() {
-    return cmd(output);
-}
+enum modeInfo = `
+Modes:
+ b, build
+ r, run
+`[1 .. $ - 1];
+
+enum argumentsInfo = `
+Arguments:
+ -I=<source folder>
+ -J=<assets folder>
+ -L=<linker flags>
+ -of=<output file>
+ -dc=<d compiler>
+`[1 .. $ - 1];
+
+enum basicFlags = ["-I", "-J", "-L"];
 
 int main(string[] args) {
-    if (ls.findItemThatEndsWith("source") == -1) { echo("Run inside the root folder."); return 1; }
-    auto mode = args.length >= 2 ? args[1] : "";
+    if (args.length <= 2) {
+        echo(usageInfo);
+        echo(modeInfo);
+        echo(argumentsInfo);
+        return 1;
+    }
+    if (!args[2].isD) {
+        echof("Source `%s` is not a folder.", args[2]);
+        return 1;
+    }
+
+    auto mode = args[1];
+    auto sourceDir = args[2];
+    auto sourceFiles = find(sourceDir, ".d", true);
+    auto compiler = "dmd";
+    auto output = join(".", pwd.basename);
+
+    IStr[] dc = [];
+    dc ~= sourceFiles;
+    foreach (arg; args[3 .. $]) {
+        if (arg.startsWith("-of")) {
+            auto path = arg[3 .. $];
+            if (path.length && path[0] == '=') path = path[1 .. $];
+            output = path;
+        }
+        if (arg.startsWith("-dc")) {
+            auto path = arg[3 .. $];
+            if (path.length && path[0] == '=') path = path[1 .. $];
+            compiler = path;
+        }
+        foreach (flag; basicFlags) {
+            if (arg.startsWith(flag)) {
+                if (arg.startsWith("-L")) {
+                    // FUCK YOU GDC.
+                    auto path = arg[2 .. $];
+                    if (path.length && path[0] == '=') path = path[1 .. $];
+                    dc ~= "-Xlinker";
+                    dc ~= path;
+                }
+                // FUCK YOU GDC AGAIN. Probably will break if poeple use -I=path and not -Ipath when using gdc.
+                dc ~= arg;
+                if (arg.startsWith("-I")) {
+                    auto path = arg[2 .. $];
+                    if (path.length && path[0] == '=') path = path[1 .. $];
+                    if (path.isD) dc ~= find(path, ".d", true);
+                    dc ~= "-J" ~ path;
+                }
+            }
+        }
+    }
+    if (compiler == "gdc") {
+        dc ~= "-Xlinker";
+        dc ~= "-L.";
+        dc ~= "-Xlinker";
+        version(linux) dc ~= "-rpath=$ORIGIN";
+        dc ~= "-o" ~ output;
+    } else {
+        dc ~= "-L-L.";
+        version(linux) dc ~= "-L-rpath=$ORIGIN";
+        dc ~= "-of" ~ output;
+    }
+    dc = compiler ~ dc;
+
     switch (mode) {
         case "build", "b":
-            if (build()) return 1;
+            if (cmd(dc)) return 1;
+            foreach (file; find(".", ".o")) rm(file);
             break;
         case "run", "r":
-            if (run()) return 1;
+            if (cmd(dc)) return 1;
+            foreach (file; find(".", ".o")) rm(file);
+            auto isBadOutput = true;
+            foreach (symbol; ['.', '/', '\\']) {
+                if (output[0] == symbol) {
+                    if (cmd(output)) return 1;
+                    isBadOutput = false;
+                    break;
+                }
+            }
+            if (isBadOutput) if (cmd(join(".", output))) return 1;
             break;
         default:
-            if (build()) return 1;
-            if (run()) return 1;
+            echof("Mode `%s` doesn't exist.", mode);
+            return 1;
     }
-    foreach (path; find(".", ".o")) rm(path);
     return 0;
 }
 
