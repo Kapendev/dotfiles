@@ -3,5 +3,9 @@
 ## A script that creates a builder for Parin games.
 
 dir="$(dirname "$0")"
-dmd -ofbuild $dir/../d/buildparin.d
-rm -f build.o
+if [ "$1" = "." ]; then
+    cp "$dir/../d/buildparin.d" "."
+else
+    dmd -ofbuild "$dir/../d/buildparin.d"
+    rm -f build.o
+fi
