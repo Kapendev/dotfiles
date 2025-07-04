@@ -12,7 +12,7 @@ color brightblue "\<(align|asm|assert|auto|const|alias|extern|export|null|shared
 color brightblue "\<(goto|continue|break|return|noreturn)\>"
 color brightblue "\<(import|pragma|version|mixin|module|macro)\>"
 color brightblue "\<(abstract|override|package|private|protected|public|super|static|this|new)\>"
-color brightblue "\<(in|out|inout|ref|nothrow|pure|lazy|debug|unittest|__gshared|__traits|string|dstring|wstring)\>"
+color brightblue "\<(in|out|inout|ref|nothrow|pure|lazy|debug|unittest|__gshared|__traits)\>"
 color brightblue "@[a-zA-Z0-9]+"
 color brightblue "deprecated"
 # Escape Sequences
