@@ -1,4 +1,4 @@
 # Dotfiles
 
-Yeah, I have nerd files.
-Put the dotfiles folder inside the home folder and then run the setup script.
+Me have them nerd fiwes ^_^
+Put da dotfiles fowder inside da home fowder and then wun da setup scwipt.
