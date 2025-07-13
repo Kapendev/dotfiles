@@ -1,32 +1,21 @@
 #!/bin/env sh
 
-packages_arg="++"
-
 # Prepare some stuff.
+packages_arg="++"
 cd "$(dirname "$0")"
 mkdir -p "$HOME/.local/share/fonts/"
-mkdir -p "$HOME/.local/share/gtksourceview-2.0/styles/"
-mkdir -p "$HOME/.local/share/gtksourceview-3.0/styles/"
 
-# [Fonts]
+# -- Fonts
 cp -f $PWD/assets/fonts/* "$HOME/.local/share/fonts/"
-
-# [Bash]
+# -- Bash
 ln -sf "$PWD/bash/.bashrc" "$HOME/.bashrc"
-
-# [Kitty]
+# -- Kitty
 ln -sf "$PWD/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-
-# [Nano]
+# -- Nano
 ln -sf "$PWD/nano/.nanorc" "$HOME/.nanorc"
 ln -sf "$PWD/nano/.nanotc" "$HOME/.nanotc"
 # No idea why I get a link inside there.
 rm -f "$PWD/nano/.nanotc/.nanotc"
-
-# [Pluma]
-# This will not work, but ehh, might work with other GTK apps.
-ln -sf "$PWD/pluma/Kapendev.xml" "$HOME/.local/share/gtksourceview-2.0/styles/Kapendev.xml"
-ln -sf "$PWD/pluma/Kapendev.xml" "$HOME/.local/share/gtksourceview-3.0/styles/Kapendev.xml"
 
 for arg in "$@"; do
     if [ "$arg" = "$packages_arg" ]; then
