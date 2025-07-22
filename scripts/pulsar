@@ -1,0 +1,6 @@
+#!/bin/env sh
+
+## A script that runs the Pulsar text editor.
+
+cmd='pulsar_exe'
+$cmd "$@" >/dev/null 2>&1 &

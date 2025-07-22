@@ -1,37 +1,28 @@
 #!/bin/env sh
 
-# Prepare some stuff.
 packages_arg="++"
 cd "$(dirname "$0")"
-mkdir -p "$HOME/.local/share/fonts/"
 
-# -- Fonts
-cp -f $PWD/assets/fonts/* "$HOME/.local/share/fonts/"
-# -- Bash
+# --- Bash
 ln -sf "$PWD/bash/.bashrc" "$HOME/.bashrc"
-# -- Kitty
+# --- Kitty
 ln -sf "$PWD/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-# -- Nano
+# --- Nano
 ln -sf "$PWD/nano/.nanorc" "$HOME/.nanorc"
 ln -sf "$PWD/nano/.nanotc" "$HOME/.nanotc"
-# No idea why I get a link inside there.
-rm -f "$PWD/nano/.nanotc/.nanotc"
+rm -f "$PWD/nano/.nanotc/.nanotc" # No idea why I get a link inside there.
 
 for arg in "$@"; do
     if [ "$arg" = "$packages_arg" ]; then
-        sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
         sudo apt update
         sudo apt install \
             build-essential \
             git \
-            subversion \
             valgrind \
             entr \
-            fastfetch \
             dmd \
             ldc \
             kitty \
-            pluma \
             wine \
             gimp \
             inkscape \
