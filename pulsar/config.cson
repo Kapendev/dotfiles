@@ -1,0 +1,155 @@
+"*":
+  "atom-ide-outline":
+    initialDisplay: false
+  "autocomplete-plus":
+    enableAutoActivation: false
+  "bracket-matcher":
+    autocompleteBrackets: false
+  core:
+    addCurrentTabToWindowTitle: false
+    audioBeep: false
+    autoHideMenuBar: true
+    disabledPackages: [
+      "wrap-guide"
+      "welcome"
+      "update-package-dependencies"
+      "timecop"
+      "symbols-view"
+      "symbol-provider-tree-sitter"
+      "symbol-provider-ctags"
+      "styleguide"
+      "spell-check"
+      "snippets"
+      "pulsar-updater"
+      "package-generator"
+      "open-on-github"
+      "language-todo"
+      "language-ruby-on-rails"
+      "language-property-list"
+      "language-mustache"
+      "image-view"
+      "github"
+      "git-diff"
+      "deprecation-cop"
+      "background-tips"
+      "autosave"
+      "autoflow"
+      "autocomplete-html"
+      "autocomplete-css"
+      "archive-view"
+      "about"
+      "tree-view"
+    ]
+    enabledPakcahes: [
+      "spell-check"
+      "about"
+      "archive-view"
+      "autocomplete-css"
+      "autocomplete-html"
+      "autoflow"
+      "background-tips"
+      "exception-reporting"
+      "open-on-github"
+      "pulsar-updater"
+      "welcome"
+      "github"
+      "pulsar-outline-view"
+      "autocomplete-plus"
+      "autosave"
+      "bracket-matcher"
+      "command-palette"
+      "dalek"
+      "deprecation-cop"
+      "dev-live-reload"
+      "encoding-selector"
+      "find-and-replace"
+      "fuzzy-finder"
+      "git-diff"
+      "go-to-line"
+      "grammar-selector"
+      "image-view"
+      "incompatible-packages"
+      "keybinding-resolver"
+      "language-c"
+      "language-clojure"
+      "language-coffee-script"
+      "language-csharp"
+      "language-css"
+      "language-gfm"
+      "language-git"
+      "language-go"
+      "language-html"
+      "language-hyperlink"
+      "language-java"
+      "language-javascript"
+      "language-json"
+      "language-less"
+      "language-make"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-property-list"
+      "language-python"
+      "language-ruby"
+      "language-ruby-on-rails"
+      "language-rust-bundled"
+      "language-sass"
+      "language-shellscript"
+      "language-source"
+      "language-sql"
+      "language-text"
+      "language-todo"
+      "language-toml"
+      "language-typescript"
+      "language-xml"
+      "language-yaml"
+      "line-ending-selector"
+      "link"
+      "markdown-preview"
+      "notifications"
+      "settings-view"
+    ]
+    packagesWithKeymapsDisabled: []
+    packagesWithSnippetsDisabled: [
+      "atom-dlang"
+    ]
+  "document-outline":
+    collapseByDefault: true
+    showByDefault: false
+  editor:
+    defaultFontSize: 18
+    fontFamily: "Menlo, Consolas, DejaVu Sans hack, hack"
+    fontSize: 15
+    preferredLineLength: 200
+    showLineNumbers: false
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "b9f2e2e2-9f3e-44f7-9912-87424f0bc8d6"
+  "language-json": {}
+  "markdown-mindmap": {}
+  "markdown-preview": {}
+  "one-dark-ui":
+    fontSize: 14
+    hideDockButtons: true
+  "pulsar-outline-view":
+    showOnRightSide: true
+  "status-bar": {}
+  tabs:
+    alwaysShowTabBar: false
+    showIcons: false
+  "tree-view":
+    focusOnReveal: false
+    hideVcsIgnoredFiles: true
+  welcome:
+    lastViewedChangeLog: "1.128.2025071004"
+    showChangeLog: false
+    showOnStartup: false
+  "wrap-guide": {}
+".git-commit.text":
+  editor:
+    preferredLineLength: 72
+".json.source":
+  editor:
+    tabType: "hard"

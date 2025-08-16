@@ -1,0 +1,41 @@
+{
+  "_from": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball",
+  "_id": "atom-dlang@1.1.2",
+  "_inBundle": false,
+  "_integrity": "sha512-KfRZonaTwYarPQVKjRNOB9X0fLasFwiYCMgS1d0jk1i9wKaGA1SfJ2iS54YT+5gSSL6u5QN7M280InPKw7yQZw==",
+  "_location": "/atom-dlang",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball",
+    "rawSpec": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball",
+    "saveSpec": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball",
+    "fetchSpec": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball",
+  "_shasum": "b82354ade1757629a5fed3e68fe3e81b68c4e23e",
+  "_spec": "https://api.pulsar-edit.dev/api/packages/atom-dlang/versions/1.1.2/tarball",
+  "_where": "/tmp/apm-install-dir-2025621-44339-xkvnvc.pg15e",
+  "bugs": {
+    "url": "https://github.com/ColdenCullen/atom-dlang/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "A d language binding for the Atom text editor.",
+  "engines": {
+    "atom": ">0.200.0"
+  },
+  "homepage": "https://github.com/ColdenCullen/atom-dlang#readme",
+  "license": "MIT",
+  "name": "atom-dlang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColdenCullen/atom-dlang.git"
+  },
+  "version": "1.1.2"
+}
