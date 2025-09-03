@@ -36,4 +36,4 @@ export PATH="$PATH:$HOME/dotfiles/scripts"
 
 alias code='pulsar'
 alias winej='LANG=ja_JP.UTF-8 wine'
-alias 7zj="$winej $HOME/.wine/drive_c/Program\ Files/7-Zip/7z.exe"
+alias 7zj="LANG=ja_JP.UTF-8 wine $HOME/.wine/drive_c/Program\ Files/7-Zip/7z.exe"
