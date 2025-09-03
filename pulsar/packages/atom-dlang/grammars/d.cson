@@ -155,7 +155,7 @@
     'name': 'storage.modifier.access-control.d'
   }
   {
-    'match': '\\b(shared|auto|static|override|final|const|ref|abstract|volatile|synchronized|lazy)\\b'
+    'match': '\\b(shared|auto|static|override|final|const|immutable|ref|abstract|volatile|synchronized|lazy)\\b'
     'name': 'storage.modifier.d'
   }
   {
