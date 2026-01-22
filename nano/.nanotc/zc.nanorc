@@ -1,4 +1,4 @@
-## C Programming Language
+## Zen-C Programming Language
 
 syntax "Zen-C" "\.(zc)$"
 magic "^(Zen-C) (source|program)"
