@@ -33,6 +33,6 @@ color green start="/\+" end="\+/"
 color ,green "[[:space:]]+$"
 
 # Operators
-# color brightblue "[.:;,+*|=!\%]" "<" ">" "/" "-" "&" "~" "\?"
+# color brightblue "[.:;,+*|=!\%]" "<" ">" "/" "-" "&" "~" "\?" ".."
 # Parenthetical Stuff
 # color brightblue "[(){}]" "\[" "\]"

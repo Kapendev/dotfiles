@@ -28,7 +28,6 @@
       "language-property-list"
       "language-mustache"
       "image-view"
-      "github"
       "git-diff"
       "deprecation-cop"
       "background-tips"
@@ -38,6 +37,7 @@
       "autocomplete-css"
       "archive-view"
       "about"
+      "github"
     ]
     enabledPakcahes: [
       "spell-check"
@@ -119,7 +119,7 @@
   editor:
     defaultFontSize: 18
     fontFamily: "Menlo, Consolas, DejaVu Sans hack, hack"
-    fontSize: 15
+    fontSize: 21
     preferredLineLength: 200
     showLineNumbers: false
     tabLength: 4
@@ -151,4 +151,4 @@
     preferredLineLength: 72
 ".json.source":
   editor:
-    tabType: "hard"
+    tabType: "soft"

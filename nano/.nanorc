@@ -28,3 +28,5 @@ bind M-/ "{comment}" main
 include "~/.nanotc/c.nanorc"
 include "~/.nanotc/d.nanorc"
 include "~/.nanotc/rin.nanorc"
+include "~/.nanotc/zc.nanorc"
+
